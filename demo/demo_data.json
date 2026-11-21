@@ -1,0 +1,51 @@
+{
+  "synthetic": true,
+  "currency": "INR",
+  "businesses": [
+    {
+      "key": "business-a",
+      "name": "Business A - Sunrise Foods",
+      "sector": "Packaged foods",
+      "operating_months": 42,
+      "city": "Pune",
+      "consent_status": "granted",
+      "monthly_sales_claim_inr": 100000,
+      "funding_request_inr": 200000,
+      "customers": [
+        {"key": "customer-a1", "name": "Synthetic Retailer One", "type": "customer", "identifier_masked": "GST-XX-1042"},
+        {"key": "customer-a2", "name": "Synthetic Cafe Two", "type": "customer", "identifier_masked": "GST-XX-2088"}
+      ],
+      "suppliers": [
+        {"key": "supplier-a1", "name": "Synthetic Grain Supplier", "type": "supplier", "identifier_masked": "GST-XX-7711"},
+        {"key": "supplier-a2", "name": "Synthetic Packaging Co", "type": "supplier", "identifier_masked": "GST-XX-8832"}
+      ],
+      "obligations": [
+        {"monthly_payment_inr": 8500, "description": "Synthetic equipment installment"}
+      ],
+      "quality_profile": "more-complete"
+    },
+    {
+      "key": "business-b",
+      "name": "Business B - Riverbend Repairs",
+      "sector": "Appliance repair",
+      "operating_months": 30,
+      "city": "Jaipur",
+      "consent_status": "granted",
+      "monthly_sales_claim_inr": 100000,
+      "funding_request_inr": 200000,
+      "customers": [
+        {"key": "customer-b1", "name": "Synthetic Home Store", "type": "customer", "identifier_masked": "GST-XX-3150"},
+        {"key": "customer-b2", "name": "Synthetic Housing Society", "type": "customer", "identifier_masked": "GST-XX-4291"}
+      ],
+      "suppliers": [
+        {"key": "supplier-b1", "name": "Synthetic Parts Hub", "type": "supplier", "identifier_masked": "GST-XX-9190"},
+        {"key": "supplier-b2", "name": "Synthetic Tools Market", "type": "supplier", "identifier_masked": "GST-XX-9201"}
+      ],
+      "obligations": [
+        {"monthly_payment_inr": 12000, "description": "Synthetic vehicle installment"},
+        {"monthly_payment_inr": 4500, "description": "Synthetic tools installment"}
+      ],
+      "quality_profile": "gaps-and-conflicts"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+# Python environments and generated files
+**/.venv/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Node dependencies and build output
+**/node_modules/
+**/dist/
+**/build/
+**/coverage/
+
+# Environment and local data
+.env
+.env.*
+!.env.example
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite-*
+
+# Generated exports and local tooling
+exports/
+*.log
+.DS_Store
+**/.tsupgrader/runtime-validation/*-result.json
+
+# Local credentials and private keys
+secrets/
+*.pem
+*.key
+*.p12
+*.pfx
