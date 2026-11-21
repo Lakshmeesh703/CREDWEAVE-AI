@@ -1,0 +1,10 @@
+{
+  "rule_version": "risk-rules.v1",
+  "thresholds": {
+    "expense_to_inflow_ratio_percent": { "watch": 80, "elevated": 100 },
+    "debt_to_average_inflow_percent": { "watch": 20, "elevated": 40 },
+    "negative_months": { "watch": 1, "elevated": 2 },
+    "volatility_to_average_inflow_percent": { "watch": 30, "elevated": 60 },
+    "supplier_concentration_percent": { "watch": 60, "elevated": 80 }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "rule_version": "loan-structuring.v1",
+  "minimum_dscr": 1.0,
+  "negative_post_emi_months_allowed": 0
+}

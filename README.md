@@ -27,6 +27,24 @@ Open <http://localhost:5173> and register an account. Registration signs you in 
 
 Port 5173 opens the sign-in portal. The jury launcher on port 8080 opens the synthetic dashboard. If the portal launcher reports an older server on its ports, stop it from the terminal where it was started and rerun the launcher.
 
+### Deploy the portal on Render
+
+Use one Python Web Service with **Root Directory** blank. The build creates the React portal and the start command serves it at the same origin as the API so the browser sends the portal's session cookies.
+
+**Build Command**
+
+```bash
+pip install -r backend/requirements.txt && npm --prefix frontend ci --include=dev && VITE_API_BASE_URL='' npm --prefix frontend run build
+```
+
+**Start Command**
+
+```bash
+uvicorn app.portal:app --app-dir backend --host 0.0.0.0 --port "$PORT"
+```
+
+Keep the database and Supabase settings on the Web Service. Set `AUTH_COOKIE_SECURE=1` and set `CORS_ORIGINS` to the service's exact HTTPS origin without a trailing slash. Use `/api/health` for the Render health check. After redeploying from the updated branch, open the service URL for the portal and `/docs` for the API reference.
+
 ### Accounts and verification flow
 
 Login shows **Business Owner**, **Lender**, and **Admin**. Register offers **Business Owner** and **Lender**. Lender registration opens a pending lender workspace with an account ID for Admin approval. An existing account that registered under the wrong option can use **Request lender access** if it owns no businesses. A project operator provisions Admin accounts.
