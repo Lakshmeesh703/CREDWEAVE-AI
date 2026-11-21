@@ -34,7 +34,7 @@ Use one Python Web Service with **Root Directory** blank. The build creates the 
 **Build Command**
 
 ```bash
-pip install -r backend/requirements.txt && npm --prefix frontend ci --include=dev && VITE_API_BASE_URL='' npm --prefix frontend run build
+pip install -r backend/requirements.txt && npm --prefix frontend ci --include=dev && VITE_API_BASE_URL='' npm --prefix frontend run build && test -f frontend/dist/index.html
 ```
 
 **Start Command**
@@ -44,6 +44,8 @@ uvicorn app.portal:app --app-dir backend --host 0.0.0.0 --port "$PORT"
 ```
 
 Keep the database and Supabase settings on the Web Service. Set `AUTH_COOKIE_SECURE=1` and set `CORS_ORIGINS` to the service's exact HTTPS origin without a trailing slash. Use `/api/health` for the Render health check. After redeploying from the updated branch, open the service URL for the portal and `/docs` for the API reference.
+
+On Render, the `app.main:app` entry point also serves the built portal once the build command above has run. The explicit `app.portal:app` entry point works on other hosts too.
 
 ### Accounts and verification flow
 

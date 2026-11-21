@@ -23,6 +23,7 @@ from app.loan_options import router as loan_options_router
 from app.credit_passport import router as credit_passport_router
 from app.review import router as review_router
 from app.sharing import router as sharing_router
+from app.portal_routes import mount_portal
 
 
 class HealthResponse(BaseModel):
@@ -95,3 +96,7 @@ async def invalid_request(_request: Request, exc: RequestValidationError) -> JSO
 @app.exception_handler(IntegrityError)
 async def conflicting_record(_request: Request, _exc: IntegrityError) -> JSONResponse:
     return JSONResponse(status_code=409, content={"detail": "The request conflicts with an existing record. No changes were applied."})
+
+
+if getenv("RENDER") == "true":
+    mount_portal(app)
